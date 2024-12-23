@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ car.photo.url }}" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{ car.model}}</h5>
+                <p>{{ car.value }}</p>
+                {% if car.bio %}
+                <p>
+                    {{ car.bio}}
+                </p>
+                {% endif %}
+                {% if user.is_authenticaded %}
+                <a href="{% url 'car-update' car.pk %}">Editar</a>
+                <a href="{% url 'car-delete' car.pk %}">Deletar</a>
+            {% endif %}
+            </div>
+            
+        </div>
+  
+      
+        
+        
+      
+
+
+{% endblock %}
