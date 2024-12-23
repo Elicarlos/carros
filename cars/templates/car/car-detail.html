@@ -1,24 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
 
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{{ car.photo.url }}" alt="">
-            <div class="card-body">
-                <h5 class="card-title">{{ car.model}}</h5>
-                <p>{{ car.value }}</p>
-                {% if car.bio %}
-                <p>
-                    {{ car.bio}}
-                </p>
+<div class="row">
+    
+    <div class="col-md-4 mt-20">
+        
+            <div class="card mb-3">
+                {% if car.photo %}
+                    <img class="card-img-top" src="{{ car.photo.url }}" alt="">
+                {% else %}
+                <p>Sem imagem</p>
                 {% endif %}
-                {% if user.is_authenticaded %}
-                <a href="{% url 'car-update' car.pk %}">Editar</a>
-                <a href="{% url 'car-delete' car.pk %}">Deletar</a>
-            {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ car.model }}</h5>
+                    <p class="card-text">{{ card.brand }}</p>
+                    <p class="card-text">{{ card.value }}</p>
+                    {% if car.bio %}
+                        <p class="card-text">{{ card.value }}</p>
+                    {% endif %}
+                </div>
+                <div class="card-footer d-flex justify-content-center g-5">
+                    <a class="btn btn-primary" href="">Atualizar</a>
+                    <a class="btn btn-danger" href="">Deletar</a>
+
+                </div>
             </div>
-            
-        </div>
-  
+       
+    </div>
       
         
         
