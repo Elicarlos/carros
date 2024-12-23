@@ -128,6 +128,7 @@ USE_I18N = True
 USE_TZ = True
 
 # API_OPEN_AI = config('API_OPEN_AI')
+API_OPEN_AI=""
 
 
 # Static files (CSS, JavaScript, Images)
